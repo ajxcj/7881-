@@ -1,11 +1,27 @@
 <template>
   <div id="app">
-     <router-view ></router-view>
+    <router-view></router-view>
+    <!-- 底部导航 -->
+    <bottomNav />
   </div>
 </template>
 
+
+<script>
+import bottomNav from "./components/bottomNav.vue";
+export default {
+  data() {
+    return {
+      activeKey: 0,
+    };
+  },
+  components: {
+    bottomNav,
+  },
+};
+</script>
 <style lang="less">
-@import url('./assets/css/reset.css');
+@import url("./assets/css/reset.css");
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -16,14 +32,5 @@
 
 nav {
   padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
 }
 </style>

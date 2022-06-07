@@ -1,0 +1,61 @@
+[33mcommit dee2188a743443a14fdd47de24ef8cc7f6691f34[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Merge: e01ee5e fd91fda
+Author: 13452014004 <1597237414@qq.com>
+Date:   Tue Jun 7 23:02:15 2022 +0800
+
+    解决冲突了
+
+[33mcommit fd91fdafadba4e99432b76cfa5066d71dce7c9c0[m[33m ([m[1;32maj[m[33m)[m
+Author: 13452014004 <1597237414@qq.com>
+Date:   Tue Jun 7 22:59:10 2022 +0800
+
+    DETAIL页面
+
+[33mcommit e01ee5e34f24eb67571a4e4c6c60896a19921505[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: 13048331526 <1808149449@qq.com>
+Date:   Tue Jun 7 22:55:16 2022 +0800
+
+    封装AIXOS
+
+[33mcommit 0fda8d7dda36fd53c166192f8469c1af132c4b87[m[33m ([m[1;31morigin/aj[m[33m)[m
+Author: 13452014004 <1597237414@qq.com>
+Date:   Tue Jun 7 17:32:28 2022 +0800
+
+    新分支提交
+
+[33mcommit 112862185aed8a571f679805f2a39b905dbbf724[m[33m ([m[1;31morigin/jj[m[33m)[m
+Merge: 7b1a0f4 2f530d2
+Author: 13452014004 <1597237414@qq.com>
+Date:   Tue Jun 7 17:24:53 2022 +0800
+
+    合并路由
+
+[33mcommit 7b1a0f43ea8945d07c2393e4ca92b1a78650399e[m
+Author: 13452014004 <1597237414@qq.com>
+Date:   Tue Jun 7 17:22:02 2022 +0800
+
+    拉取新路由
+
+[33mcommit 2f530d2b03f192b9922273225fd3469a0b332e05[m
+Author: 13048331526 <1808149449@qq.com>
+Date:   Tue Jun 7 17:15:04 2022 +0800
+
+    添加模块
+
+[33mcommit bdcd79b1f9e058c3b53f95a24c0d4f234df7a647[m
+Author: 13048331526 <1808149449@qq.com>
+Date:   Tue Jun 7 16:51:57 2022 +0800
+
+    加入aixos
+
+[33mcommit e7212066ab58a0ca40f963a4c5633facc1e6dcfa[m
+Author: 13048331526 <1808149449@qq.com>
+Date:   Tue Jun 7 16:45:35 2022 +0800
+
+    初始化成功成
+
+[33mcommit fd8436e05cd7e606cf35924f42062b66b3ee424c[m
+Author: 13048331526 <1808149449@qq.com>
+Date:   Tue Jun 7 16:27:45 2022 +0800
+
+    init

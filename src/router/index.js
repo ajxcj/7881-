@@ -8,6 +8,8 @@ Vue.use(VueRouter)
 const routes = [
   ...JJ_router,
   // ...AJ_router
+  // ...JJ_router,
+  ...AJ_router
 ]
 
 const router = new VueRouter({
