@@ -12,5 +12,16 @@ module.exports = defineConfig({
         },
       }
     }
+  },
+  devServer:{
+   
+    proxy:{
+      '/home':{
+          target:'http://www.geilisx.com',
+          pathRewrite:{ //重写路径，剔除多余的代理路径
+            '^/home':''
+          }  
+      }
+    }
   }
 })
