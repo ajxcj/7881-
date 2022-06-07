@@ -1,0 +1,98 @@
+section {
+  padding-top: 5rem;
+  width: 100%;
+  height: 100%;
+}
+section .nav {
+  width: 100%;
+  height: 5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid #000;
+  background: #fff;
+}
+section .nav ul {
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  display: flex;
+}
+section .nav ul li {
+  font-weight: bold;
+  width: 25%;
+  line-height: 5rem;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+section .nav ul li.active {
+  color: green;
+}
+section main {
+  width: 100%;
+  height: calc(100% - 5rem);
+  overflow: hidden;
+}
+section main .van-sidebar {
+  position: fixed;
+  width: 9rem;
+}
+section main .van-sidebar .van-sidebar-item {
+  width: 9rem;
+  height: 4.8rem;
+  line-height: 4.8rem;
+  text-align: center;
+}
+section main .right_prolist {
+  width: calc(100% - 9.5rem);
+  height: 100%;
+  overflow-y: auto;
+  float: right;
+  margin-left: 3rem;
+}
+section main .right_prolist .prolist_boxs {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+section main .right_prolist .prolist_boxs .pro_item {
+  width: 100%;
+  height: 9.6rem;
+  overflow: hidden;
+  padding: 1rem 1rem 1rem 1rem;
+  box-sizing: border-box;
+}
+section main .right_prolist .prolist_boxs .pro_item img:nth-of-type(1) {
+  width: 8rem;
+  height: 7.5rem;
+  float: left;
+}
+section main .right_prolist .prolist_boxs .pro_item h3 {
+  float: left;
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+  font-size: 1.4rem;
+}
+section main .right_prolist .prolist_boxs .pro_item h4 {
+  float: left;
+  color: #f86305;
+  margin-top: 3.6rem;
+  margin-left: -7.5rem;
+}
+section main .right_prolist .prolist_boxs .pro_item h4 span:nth-of-type(1) {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+section main .right_prolist .prolist_boxs .pro_item h5 {
+  float: left;
+  margin-top: 6rem;
+  margin-left: -9.7rem;
+  font-size: 1.4rem;
+  color: #666;
+}
+section main .right_prolist .prolist_boxs .pro_item img:nth-of-type(2) {
+  float: right;
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-top: 5rem;
+}
