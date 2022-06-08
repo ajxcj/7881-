@@ -1,7 +1,7 @@
-import Detail from '../views/Detail.vue'
+import Detail from '../views/Buy.vue'
 export default [
     {
-        path: '/detail',
-        component: () => import('../views/Detail.vue')
+        path: '/buy',
+        component: () => import('../views/Buy.vue')
     }
 ]
