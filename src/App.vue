@@ -32,9 +32,9 @@ export default {
   width: 100%;
 }
 
-#app{
+#app {
   height: 100%;
-  overflow-y:scroll;
+  overflow-y: scroll;
   background-color: #fff;
 }
 </style>

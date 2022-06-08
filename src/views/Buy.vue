@@ -48,56 +48,49 @@
     </div>
     <!-- 内容区域 -->
     <div class="container">
-      <div class="item">
+      <div class="item" v-for="(item, index) in gameList" :key="index">
         <img
-          src="https://pic.7881.com/7881/market/images/game_logo/G10.png"
+          :src="
+            'https://pic.7881.com/7881/market/images/game_logo/' +
+            item.gameId +
+            '.png'
+          "
           alt=""
         />
-        <p>地下城与勇士</p>
-      </div>
-      <div class="item">
-        <img
-          src="https://pic.7881.com/7881/market/images/game_logo/G10.png"
-          alt=""
-        />
-        <p>地下城与勇士</p>
-      </div>
-      <div class="item">
-        <img
-          src="https://pic.7881.com/7881/market/images/game_logo/G10.png"
-          alt=""
-        />
-        <p>地下城与勇士</p>
-      </div>
-      <div class="item">
-        <img
-          src="https://pic.7881.com/7881/market/images/game_logo/G10.png"
-          alt=""
-        />
-        <p>地下城与勇士</p>
-      </div>
-      <div class="item">
-        <img
-          src="https://pic.7881.com/7881/market/images/game_logo/G10.png"
-          alt=""
-        />
-        <p>地下城与勇士</p>
-      </div>
-      <div class="item">
-        <img
-          src="https://pic.7881.com/7881/market/images/game_logo/G10.png"
-          alt=""
-        />
-        <p>地下城与勇士</p>
+        <p>{{ item.gameName }}</p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-// import { getGame } from "../api/Getdata.js";
+// import axios from "axios";
+import { Getdata } from "../api/Getdata.js";
 export default {
-  data: {},
+  data() {
+    return {
+      gameList: [],
+    };
+  },
+  created() {
+    // axios
+    //   .post("https://gw.7881.com/basic/api/game-search", {
+    //     gameType: "",
+    //     hotFlag: "hot",
+    //     px: null,
+    //   })
+    //   .then((res) => {
+    //     console.log(res);
+    //   });
+    Getdata.post("/basic/api/game-search", {
+      gameType: "",
+      hotFlag: "hot",
+      px: null,
+    }).then((res) => {
+      // console.log(res.data.body);
+      this.gameList = res.data.body;
+    });
+  },
 };
 </script>
 <style src="../assets/css/reset.css" scoped></style>
