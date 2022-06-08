@@ -1,19 +1,30 @@
 <template>
-  <div>
-    <div class="topDiv">
-      <img v-for="(item,index) in imge" :key="index" :src="item" alt />
+  <div id="jia">
+    <div class="top">
+      <div class>
+        <img
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAB4UExURUxpcdnf4tnf49rg49rg4tzh5Nrg5Nrf4uPj6tvh5Mz5+dzc49vi5dzh5N/m5tvh5Nrf4t/k59nf4v////7+/v+dZt/k5vP19c3Nzejq7OLm6e3w8fv7/Pf4+N3i5f+peNvb29XV1f/49P+1jP/Cn//Zw/zp3enHs7r8CaAAAAASdFJOUwD7pMaNVH7tENIFI2BzM9+0pUTmnn4AAAMKSURBVFjDrVfrmqMgDK2t13Y67URWEfDS677/G65iEYSgzvdt/gwdzZGEcxKy23ksjeKf7JIEQXLJ9nGU7n5l32EWQG9NwVjRDKsgC7+3eqfnbHCpSkFyaaSBhvX/yc5b9pHGCUgr88kKYDkpK4AkXoX4+rhbANXwR/AGkq9F99MBwA/QB8MBDie/f5SAB4CrpaggiXz+IYAPYPYDQtT9uAc/QK1/DKe6PyL+V1gAENOayIdXF8H6vgVAprUYn+6X47cBGr2uP4+tPESwCFDodamez87ilCwDML3m6nli8uEAywAVAgAHg7+wAsD1utJvTKxOk18AMP1GopQVwxrAnIiTxUsbMAFKMSeitYUz6l8ZToaR2UtnCZAh7kWd5xsAMln/sM8Tj79isrJvlMQL/jZAiEbA/P6TFHQMaWD7N8Lvr6UwWpAiMpLnJ8gmgF5SDoukcCpK600AsaeQ3CitUABuvb13hTjsnVBKTSay2gdw2F2wCMoeQKdSUHrzAVx2thD4JwU3Y9s9HKLmUQ67AEsBo7QzFGzA2QCBAyCPT3Q34xA6Shs/gBVCgWTePBLmhGAlETu8ziAFc5J4QHJoC4iVaEEaj9HXEeuuaxC0xiFS7AHo9z0j08fAoXL0KwACjpgsOXOTPTeyUk8GOVsFhRn8Y2JVjJlb0iankiIlweZR6BZVRQR+64q1ijgWVbso1qqZEFjdQIY1loJsraiqsditzVuUhc0i1V3tsljgZbluXBbh3ZWT193taW+nfE/tfX7BGE7/3T5f77uxkfur/esAfKFXHC4z8PojrW3bx+P5fLT98s4cISKXLBX+B0Bb+87JHGF2yZokpQrH0/J/DkmZI0ToRVMBPKYAhhBUTk2EEL/qKi3d7ygZRKELieeyzfuhYqE7Ky5dj97rfj+kLVwPPmrArvuGsD0AsmkWaPzmyFMUHibn/cVHZtE/8oxDF/dFAIwP318ausaxr8GySEQtw18Z+9TgWZX2Nspy+PyGwXMafRnXo68oebN59P0Pw7c7/v8sjP//APg38NzYhF39AAAAAElFTkSuQmCC"
+          alt
+        />
+        <span>欢迎来到7811</span>
+      </div>
+      <div class="right">快捷搜索</div>
     </div>
-    <van-swipe :autoplay="3000" class="banner" :touchable="false">
-      <van-swipe-item v-for="(image, index) in images" :key="index">
-        <img v-lazy="image" />
-      </van-swipe-item>
-    </van-swipe>
-    <div class="stepDiv">
-      <ul>
-        <li  v-for="(ite,index) in lis" :key="index"><img :src="ite[0]" alt="">
-        {{ite[1]}}</li>
-      </ul>
+    <div class="banner">
+      <dl v-for="(iten,index) in headline" :key="index">
+        <dt>
+          <img :src="iten.content" alt />
+        </dt>
+        <dd>{{iten.title}}</dd>
+      </dl>
     </div>
+    <van-tabs v-model="active" line-width="25%" @click="onClick">
+      <van-tab title="热门"></van-tab>
+      <van-tab title="手游"></van-tab>
+      <van-tab title="端游"></van-tab>
+      <van-tab title="查看更多"></van-tab>
+    </van-tabs>
+    <router-view :propName="obj"></router-view>
   </div>
 </template>
 
@@ -21,88 +32,43 @@
 import Vue from "vue";
 import { Lazyload, ImagePreview } from "vant";
 import axios from "axios";
-import {Getdata} from "../api/Getdata.js"
+import { Getdata } from "../api/Getdata.js";
 
 Vue.use(Lazyload);
 export default {
   data() {
     return {
-      imge: [
-        "http://www.geilisx.com/public/Mobile/images/wap_catalog.png",
-        "http://www.geilisx.com/public/Mobile/images/logo.png",
-        "http://www.geilisx.com/public/Mobile/images/wap_search.png"
-      ],
-      images: [
-        "http://image-python.itheima.net/group1/M00/00/01/rBAAlV5Gia2ARS31AACpB-LsCdE4856717",
-        "http://image-python.itheima.net/group1/M00/00/01/rBAAlV5GiaWAVnGfAAC3B-z8J2c7045126",
-        "http://image-python.itheima.net/group1/M00/00/01/rBAAlV5GiYWAPztqAAD0akkXmFo1618513",
-        "http://image-python.itheima.net/group1/M00/00/01/rBAAlV5GiZaAN7tcAAETwXb_pso9087865"
-      ],
-      lis: [['http://www.geilisx.com/public/Mobile/images/nav-3.png','蔬菜豆菇'],
-              ['http://www.geilisx.com/public/Mobile/images/nav-4.png','新鲜水果'],
-              ['http://www.geilisx.com/public/Mobile/images/nav-5.png','鲜肉蛋禽'],
-              ['http://www.geilisx.com/public/Mobile/images/nav-6.png','水产海鲜'],
-              ['http://www.geilisx.com/public/Mobile/images/nav-7.png','速食速冻'],
-              ['http://www.geilisx.com/public/Mobile/images/nav-8.png','粮油副食'],
-              ['http://www.geilisx.com/public/Mobile/images/nav-9.png','酒类'],
-              ['http://www.geilisx.com/public/Mobile/images/nav-10.png','牛奶饮料'],
-              ['http://www.geilisx.com/public/Mobile/images/nav-11.png','日用百货'],
-              ['http://www.geilisx.com/public/Mobile/images/nav-12.png','关于我们']
-      
-      
-      
-      
-      ]
+      headline: [],
+      active: 0,
+      body: [],
+      obj: {}
     };
   },
+  methods: {
+    onClick(name, title) {
+      if (title == "热门") {
+        this.obj = this.body.allHotGames;
+      } else if (title == "手游") {
+        this.obj = this.body.clientHotGames;
+      } else if (title == "端游") {
+        this.obj = this.body.mobileHotGames;
+      }
+    }
+  },
   created() {
-    Getdata.post("/Mobile/Index/loadProductInfo.html").then(res => {
-      console.log(res);
-    })
+    Getdata.get(
+      "/conf-service-api/api/postion/list?positionName=APP%E9%A6%96%E9%A1%B5%E9%A1%B6%E9%83%A8%E7%B1%BB%E7%9B%AE"
+    ).then(res => {
+      this.headline = res.data.body;
+    }),
+      Getdata.get("/conf-service-api/api/m/conf/hot-games").then(res => {
+        console.log(res.data.body);
+        this.body = res.data.body;
+        this.obj = res.data.body.allHotGames;
+      });
   }
 };
 </script>
-
+<style src="../assets/css/Home.css" scoped></style>
 <style lang="less" scoped>
-.topDiv {
-  display: flex;
-  justify-content: space-between;
-  padding: 2.4rem 2rem;
-  background-color: #fff;
-  align-items: center;
-  img {
-    width: 4.5rem;
-    height: 4.5rem;
-  }
-  img:nth-of-type(2) {
-    height: 6rem;
-    width: 22rem;
-  }
-}
-.banner{
-  height: 23.1rem;
-  img{
-    width: 100%;
-  }
-}
-.stepDiv {
-  height: 24.2rem;
-  background-color: #fff;
-  ul{
-    display: flex;
-    flex-wrap: wrap;
-    padding-top:1rem ;
-    li{
-      width: 20%;
-      height: 12rem;
-      display: flex;flex-direction: column;
-     justify-content: center;
-     align-items: center;
-      img{
-        width: 7.5rem;
-        margin-bottom: 0.5rem;
-      }
-    }
-  }
-}
 </style>

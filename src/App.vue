@@ -35,4 +35,8 @@ export default {
 nav {
   padding: 30px;
 }
+#app{
+  height: 100%;
+  overflow-y: auto;
+}
 </style>
