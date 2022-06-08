@@ -10,21 +10,68 @@
       </div>
       <div class="right">快捷搜索</div>
     </div>
-    <div class="banner">
-      <dl v-for="(iten,index) in headline" :key="index">
-        <dt>
-          <img :src="iten.content" alt />
-        </dt>
-        <dd>{{iten.title}}</dd>
-      </dl>
-    </div>
-    <van-tabs v-model="active" line-width="25%" @click="onClick">
-      <van-tab title="热门"></van-tab>
-      <van-tab title="手游"></van-tab>
-      <van-tab title="端游"></van-tab>
-      <van-tab title="查看更多"></van-tab>
-    </van-tabs>
-    <router-view :propName="obj"></router-view>
+    <section>
+      <div class="banner">
+        <dl v-for="(iten,index) in headline" :key="index">
+          <dt>
+            <img :src="iten.content" alt />
+          </dt>
+          <dd>{{iten.title}}</dd>
+        </dl>
+      </div>
+      <van-tabs v-model="active" line-width="25%" @click="onClick">
+        <van-tab title="热门"></van-tab>
+        <van-tab title="手游"></van-tab>
+        <van-tab title="端游"></van-tab>
+        <van-tab title="查看更多"></van-tab>
+      </van-tabs>
+      <router-view :propName="obj"></router-view>
+      <div class="lunbo">
+        <van-swipe :autoplay="3000" width="100%">
+          <van-swipe-item v-for="(image, index) in images" :key="index">
+            <img v-lazy="image" />
+          </van-swipe-item>
+        </van-swipe>
+        <div class="bottom">
+          <van-swipe
+            style="height: 6.4rem;"
+            vertical
+            :autoplay="3000"
+            :loop="true"
+            :show-indicators="false"
+          >
+            <van-swipe-item v-for="(itme,index) in hint" :key="index">{{itme.title}}</van-swipe-item>
+          </van-swipe>
+        </div>
+      </div>
+      <div class="be relieved">
+        <div v-for="(item,index) in platform" :key="index">
+          <span>{{item.title}}</span>
+          <br />
+          {{item.content}}
+        </div>
+      </div>
+      <div class="hot-recommend-area">
+        <div class="hot-recommend-box">
+          <div class="tit">
+            <span class="left">热门推荐</span>
+            <span class="right">查看更多></span>
+          </div>
+          <div class="item-box">
+            <div class="item" v-for="(item,index) in recommend" :key="index">
+              <img :src="item.content" alt />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="account-recommend-area">
+        <div class="account-recommend-box">
+          <div class="tit">
+            <span class="left">精品账号推荐</span>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -41,7 +88,14 @@ export default {
       headline: [],
       active: 0,
       body: [],
-      obj: {}
+      obj: {},
+      images: [
+        "https://img01.yzcdn.cn/vant/apple-1.jpg",
+        "https://img01.yzcdn.cn/vant/apple-2.jpg"
+      ],
+      hint: [],
+      platform: [],
+      recommend: []
     };
   },
   methods: {
@@ -62,9 +116,36 @@ export default {
       this.headline = res.data.body;
     }),
       Getdata.get("/conf-service-api/api/m/conf/hot-games").then(res => {
-        console.log(res.data.body);
         this.body = res.data.body;
         this.obj = res.data.body.allHotGames;
+      }),
+      Getdata.get(
+        "/conf-service-api/api/postion/list?positionName=APP%E9%A6%96%E9%A1%B5banner%E8%BD%AE%E6%92%AD%E5%9B%BE"
+      ).then(res => {
+        let arr = [];
+        res.data.body.forEach(element => {
+          arr.push(element.content);
+        });
+        this.images = arr;
+      }),
+      Getdata.post("/help-service-api/api/article/query/list-cache", {
+        bigCategoryName: "新闻公告",
+        retSize: 5,
+        siteDomain: "www.7881.com",
+        smallCategoryName: "新闻公告"
+      }).then(res => {
+        this.hint = res.data.body;
+      }),
+      Getdata.get(
+        "/conf-service-api/api/postion/list?positionName=APP%E9%A6%96%E9%A1%B53%E5%9D%97%E7%8A%B6%E5%B9%BF%E5%91%8A"
+      ).then(res => {
+        this.platform = res.data.body;
+      }),
+      Getdata.get(
+        "/conf-service-api/api/postion/list?positionName=APP%E9%A6%96%E9%A1%B5%E7%83%AD%E9%97%A8%E6%8E%A8%E8%8D%90"
+      ).then(res => {
+        console.log(res.data);
+        this.recommend = res.data.body;
       });
   }
 };

@@ -14,7 +14,6 @@ module.exports = defineConfig({
     }
   },
   devServer:{
-   
     proxy:{
       '/home':{
           target:'https://gw.7881.com',

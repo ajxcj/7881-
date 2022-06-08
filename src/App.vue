@@ -32,11 +32,9 @@ export default {
   width: 100%;
 }
 
-nav {
-  padding: 30px;
-}
 #app{
   height: 100%;
-  overflow-y: auto;
+  overflow-y:scroll;
+  background-color: #fff;
 }
 </style>
