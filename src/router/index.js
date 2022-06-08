@@ -6,8 +6,6 @@ import AJ_router from './AJ_router'
 Vue.use(VueRouter)
 
 const routes = [
-  ...JJ_router,
-  // ...AJ_router
   // ...JJ_router,
   ...AJ_router
 ]
