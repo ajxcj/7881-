@@ -8,4 +8,8 @@ export default [
         path: '/sell',
         component: () => import('../views/Sell.vue')
     },
+    {
+        path: '/my',
+        component: () => import('../views/My.vue')
+    },
 ]
