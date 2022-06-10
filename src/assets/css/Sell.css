@@ -69,6 +69,7 @@
   height: 33.7rem;
   position: relative;
   float: left;
+  margin-left: 1.5rem;
 }
 .container .bottom .left img {
   width: 100%;
@@ -93,7 +94,6 @@
   width: 60%;
   height: 15.5rem;
   position: relative;
-  margin-left: 7.5rem;
 }
 .container .bottom .rightTop img {
   width: 100%;
@@ -117,9 +117,9 @@
 .container .bottom .rightBottom {
   float: left;
   width: 20rem;
-  height: 14rem;
+  height: 16rem;
   margin-top: -17rem;
-  margin-left: 28rem;
+  margin-left: 26rem;
   position: relative;
 }
 .container .bottom .rightBottom img {
@@ -146,7 +146,6 @@
   height: 16.1rem;
   float: right;
   margin-top: -17rem;
-  margin-right: 5rem;
   position: relative;
 }
 .container .bottom .rightBottomm img {
