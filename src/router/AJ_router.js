@@ -1,4 +1,3 @@
-import Detail from '../views/Buy.vue'
 export default [
     {
         path: '/buy',
@@ -7,5 +6,13 @@ export default [
     {
         path: '/sell',
         component: () => import('../views/Sell.vue')
+    },
+    {
+        path: '/my',
+        component: () => import('../views/My.vue')
+    },
+    {
+        path: '/news',
+        component: () => import('../views/News.vue')
     },
 ]

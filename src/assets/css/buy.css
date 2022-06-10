@@ -81,10 +81,11 @@
   width: calc(100% - 8rem);
   display: flex;
   flex-wrap: wrap;
+  margin-top: 2rem;
 }
 .section .container .item {
   width: 25%;
-  height: 18rem;
+  height: 25rem;
 }
 .section .container .item img {
   width: 11.4rem;
