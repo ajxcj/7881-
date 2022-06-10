@@ -175,8 +175,8 @@ section {
   box-sizing: border-box;
   padding: 0 3.2rem;
   height: 59.6rem;
-  background-image: url("https://h5.7881.com/static/img/part-img.2ade6b29.png");
   background-size: 100% 100%;
+  margin: 2rem 0rem;
   z-index: 1;
 }
 .account-recommend-area .account-recommend-box {

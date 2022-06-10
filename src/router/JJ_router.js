@@ -11,4 +11,8 @@ export default [
       },
     ]
   },
+  {
+      path: '/estimate',
+      component: () => import('../views/estimate.vue')
+  }
 ]

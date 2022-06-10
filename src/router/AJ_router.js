@@ -12,7 +12,7 @@ export default [
         component: () => import('../views/My.vue')
     },
     {
-        path: '/news',
-        component: () => import('../views/News.vue')
+        path: '/estimate',
+        component: () => import('../views/estimate.vue')
     },
 ]
