@@ -7,7 +7,7 @@
       <div class="header"></div>
       <!-- 登录 -->
       <div class="login">
-        <h2>登录</h2>
+        <h2 @click="to">登录</h2>
         <div class="bottom">
           <div class="con">
             <van-icon name="star-o" size="4rem" />
@@ -160,7 +160,13 @@
 import Vue from "vue";
 import { Icon } from "vant";
 Vue.use(Icon);
-export default {};
+export default {
+  methods: {
+    to() {
+      this.$router.push("/GoLogin");
+    },
+  },
+};
 </script>
 <style src="../assets/css/my.css" scoped></style>
 <style lang="less" scoped>

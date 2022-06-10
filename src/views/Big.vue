@@ -1,17 +1,21 @@
 <template>
   <div id="app">
     <router-view></router-view>
+    <!-- 底部导航 -->
+    <bottomNav />
   </div>
 </template>
 
 
 <script>
+import bottomNav from "../components/bottomNav.vue";
 export default {
-  components: {},
+  components: {
+    bottomNav,
+  },
 };
 </script>
 <style lang="less">
-@import url("./assets/css/reset.css");
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

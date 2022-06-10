@@ -11,12 +11,18 @@
     </div>
 
     <p>登录后查看消息</p>
-    <button>登录</button>
+    <button @click="to">登录</button>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    to() {
+      this.$router.push("/GoLogin");
+    },
+  },
+};
 </script>
 <style src="../assets/css/news.css" scoped></style>
 <style lang="less" scoped>
