@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="box">
     <div class="header">
       <h1>消息</h1>
     </div>
