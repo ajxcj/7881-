@@ -110,7 +110,7 @@
         <div class="tabs-box">
           <div class="tabs-area">
             <div class="tabs-item" v-for="(item,index) in navigation" :key="index">
-              <p class="tabs-txt" @click="Switchingdata(item.content)">{{item.title}}</p>
+              <p :class="active1==index?'jiajia':''" class="tabs-txt " @click="Switchingdata(item.content,index)">{{item.title}}</p>
             </div>
           </div>
         </div>
@@ -125,11 +125,11 @@
               <span>{{item.title}}</span>
             </div>
             <div class="box-center">
-              <span>{{item.groupName}}</span>
+              <span >{{item.groupName}}</span>
 
               <p>￥{{item.originPrice}}</p>
             </div>
-            <div class="box-img">
+            <div class="box-img" v-if="item.titleAlias">
               <img
                 src="data:image/png;base64,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"
                 alt
@@ -175,7 +175,8 @@ export default {
       navigation: [],
       commodity: [],
       number: 0,
-      gameId: "A2705"
+      gameId: "A2705",
+      active1:0
     };
   },
   methods: {
@@ -205,7 +206,9 @@ export default {
         });
       }
     },
-    Switchingdata(string){
+    Switchingdata(string,index){
+      this.active1 = index
+      this.number = 0 
       this.gameId = string
       Getdata.post("/goods-service-api/api/goods/list", {
         pageNum: this.number,
