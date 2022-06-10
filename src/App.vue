@@ -16,8 +16,8 @@ export default {
   //   };
   // },
   components: {
-    bottomNav,
-  },
+    bottomNav
+  }
 };
 </script>
 <style lang="less">
@@ -26,15 +26,9 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  height: 100%;
   width: 100%;
-}
-
-#app {
   height: 100%;
-  overflow-y: scroll;
   background-color: #fff;
 }
+
 </style>

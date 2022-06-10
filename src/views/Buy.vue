@@ -82,6 +82,7 @@ export default {
     //   .then((res) => {
     //     console.log(res);
     //   });
+    this.$store.commit("bottomNav/alternum",1);
     Getdata.post("/basic/api/game-search", {
       gameType: "",
       hotFlag: "hot",
