@@ -12,7 +12,7 @@
     </div>
     <section>
       <div class="banner">
-        <dl v-for="(iten,index) in headline" :key="index">
+        <dl v-for="(iten,index) in headline" :key="index" @click="to(index)">
           <dt>
             <img :src="iten.content" alt />
           </dt>
@@ -220,7 +220,12 @@ export default {
         console.log(res);
         this.commodity = res.data.body.results
       });
-    }
+    },
+      to(index){
+         if(index==1){
+          this.$router.push('/estimate');
+         }
+      }
   },
   created() {
     Getdata.get(
