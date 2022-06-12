@@ -56,19 +56,22 @@
       />
 
       <van-swipe
-        style="height: 20px; width: 70%; margin-left: 4rem"
+        style="height: 30px; width: 70%; margin-left: 4rem"
         vertical
         autoplay="2000"
         :show-indicators="false"
       >
-        <van-swipe-item v-for="(item, index) in AccountQuickQeport" :key="index"
-          ><span
+        <van-swipe-item
+          v-for="(item, index) in AccountQuickQeport"
+          :key="index"
+          style="display: flex; align-items: center"
+        >
+          <span
             style="
               color: #ff6600;
               font-weight: bold;
               weight: 6.5rem;
-              height: 1.4rem;
-              font-size: 1.2rem;
+              font-size: 1.4rem;
               overflow: hidden;
             "
             >{{ item.buyerTelephone }}</span
@@ -76,33 +79,22 @@
           <span style="color: #999; margin-left: 1rem">刚买了</span
           ><span
             style="
+              display: inline-block;
               color: #ff6600;
               font-weight: bold;
               margin-left: 1rem;
+              width: 12rem;
+              text-align: left;
               overflow: hidden;
               white-space: nowrap;
               text-overflow: ellipsis;
-              weight: 3rem;
-              height: 1.4rem;
-              text-align: left;
             "
             >{{ item.gamename }}</span
           >
-          <p
-            style="
-              float: right;
-              color: #ff6600;
-              font-weight: bold;
-              margin-top: 0.3rem;
-            "
-          >
-            &yen;<span>
-              {{ item.billmoney }}
-            </span>
+          <p style="float: left; color: #ff6600; font-weight: bold">
+            &yen;<span> {{ item.billmoney }}</span
+            >.00
           </p>
-          <!-- <span style="color: #ff6600; font-weight: bold; margin-left: 5rem"
-            ></span
-          > -->
         </van-swipe-item>
       </van-swipe>
     </div>
