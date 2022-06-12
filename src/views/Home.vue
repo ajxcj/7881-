@@ -12,7 +12,7 @@
     </div>
     <section>
       <div class="banner">
-        <dl v-for="(iten, index) in headline" :key="index">
+        <dl v-for="(iten, index) in headline" :key="index" @click="toGo(index)">
           <dt>
             <img :src="iten.content" alt />
           </dt>
@@ -199,6 +199,24 @@ export default {
     };
   },
   methods: {
+    toGo(i) {
+      if (i == 0) {
+        this.$router.push("/buyAccount");
+        return;
+      }
+      if (i == 1) {
+        this.$router.push("/home");
+        return;
+      }
+      if (i == 2) {
+        this.$router.push("/goldCoins");
+        return;
+      }
+      if (i == 3) {
+        this.$router.push("/since");
+        return;
+      }
+    },
     add() {
       this.number++;
       Getdata.post("/goods-service-api/api/goods/list", {

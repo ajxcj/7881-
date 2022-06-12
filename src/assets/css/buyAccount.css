@@ -1,0 +1,263 @@
+.big {
+  overflow-y: auto;
+  width: 100%;
+  height: 100%;
+  background: #FAFAFA;
+}
+.banner {
+  width: 90%;
+  height: 20rem;
+  margin: 2rem auto;
+}
+.top {
+  width: 100%;
+  height: 8rem;
+  padding-top: 1rem;
+  background: #FFf;
+}
+.top input {
+  width: 50rem;
+  height: 6rem;
+  border-radius: 2rem;
+  background-color: rgba(217, 217, 231, 0.3);
+  color: #ccc;
+  text-align: center;
+  margin-top: 1rem;
+  float: left;
+  margin-left: 5rem;
+}
+.top span {
+  line-height: 8rem;
+  margin-left: 2rem;
+  color: #fff;
+}
+.hot {
+  width: 90%;
+  height: 48rem;
+  margin: auto;
+}
+.hot .top {
+  width: 100%;
+  height: 10rem;
+  box-sizing: border-box;
+  padding-top: 4rem;
+  background: #FAFAFA;
+}
+.hot .top h2 {
+  float: left;
+  font-weight: bold;
+  color: #000;
+}
+.hot .top h5 {
+  float: left;
+  margin-left: 45rem;
+}
+.hot .container {
+  width: 100%;
+  height: 36rem;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.hot .container .item {
+  width: 25%;
+  height: 20rem;
+}
+.hot .container .item img {
+  width: 11.4rem;
+  height: 11.4rem;
+  margin-left: 2.5rem;
+}
+.hot .container .item p {
+  font-size: 2.5rem;
+  margin-top: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+.ban {
+  width: 90%;
+  height: 7.6rem;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.ban::after {
+  content: "";
+  position: absolute;
+  width: 0.5rem;
+  height: 4rem;
+  background-color: #999;
+  left: 14rem;
+}
+.ban img {
+  width: 10rem;
+  height: 2.6rem;
+  margin-left: 2rem;
+}
+.center {
+  width: 90%;
+  height: 15rem;
+  margin: auto;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.02);
+  border-radius: 1rem;
+  padding: 1.2rem;
+  display: flex;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+.center .one {
+  width: 50%;
+  height: 15rem;
+  background: #fff;
+}
+.center .one .left {
+  width: 60%;
+  height: 100%;
+  float: left;
+}
+.center .one .left img {
+  width: 9.4rem;
+  height: 2.8rem;
+  margin-top: 1rem;
+  float: left;
+}
+.center .one .left h2 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #000;
+}
+.center .one .left h3 {
+  font-size: 1rem;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 16.6rem;
+}
+.center .one img {
+  float: right;
+  width: 10rem;
+  height: 12rem;
+  margin-right: 3.5rem;
+}
+.all {
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  margin-top: 18rem;
+}
+.all .head {
+  width: 100%;
+  height: 8rem;
+  display: flex;
+  justify-content: flex-start;
+  line-height: 8rem;
+}
+.all .head h2 {
+  margin-left: 2rem;
+  color: #000;
+}
+.all .head .active {
+  font-weight: bold;
+  font-size: 3rem;
+  position: relative;
+}
+.all .head .active::after {
+  position: absolute;
+  content: '';
+  width: 6rem;
+  height: 1rem;
+  background-color: #FF7200;
+  border-radius: 0 0 4rem 4rem;
+  margin-top: 7rem;
+  margin-left: -11rem;
+}
+.all .head span {
+  margin-left: 8rem;
+}
+.all .item {
+  width: 90%;
+  height: 56rem;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 1.3rem 1.2rem 1.7rem 1.2rem;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.05);
+  border-radius: 2rem;
+  margin-bottom: 1rem;
+}
+.all .item .top {
+  width: 100%;
+  height: 15rem;
+}
+.all .item .top p {
+  width: 12rem;
+  height: 2.8rem;
+  float: left;
+  background: #FFF4E3;
+  color: #FF7200;
+  text-align: center;
+}
+.all .item .top span {
+  display: inline-block;
+  color: #000;
+  font-weight: bold;
+  line-height: 3rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  height: 2.6rem;
+  width: 100%;
+  margin-top: 3rem;
+  margin-left: -2rem;
+}
+.all .item .top .ne {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+.all .item .top .ne p:nth-of-type(1) {
+  color: #333;
+  background-color: #fff;
+  width: 50%;
+  height: 100%;
+  text-align: left;
+}
+.all .item .top .ne p:nth-of-type(2) {
+  color: #ff7200;
+  font-size: 3rem;
+  font-weight: bold;
+}
+.all .item img {
+  width: 100%;
+  height: 32rem;
+  background-image: 100% 100% url(https://img.alicdn.com/imgextra/i4/0/TB1.X.X.QoB8KJjy0FoXXbWxFXa_!!0-item_pic.jpg_430x430.jpg);
+  background-repeat: no-repeat;
+}
+.all .item .bot {
+  width: 100%;
+  height: 5.2rem;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-start;
+}
+.all .item .bot .a {
+  width: 14rem;
+  height: 4rem;
+  border: 1px solid #ccc;
+  border-radius: 2rem;
+  margin-left: 1rem;
+}
+.all .item .bot .a img {
+  width: 4rem;
+  height: 4rem;
+  float: left;
+}
+.all .item .bot .a span {
+  font-size: 1.6rem;
+  line-height: 4rem;
+}
