@@ -1,5 +1,6 @@
 <template>
-  <div id="jia">
+  <div id="jia" v-loading.fullscreen.lock="bol" 
+  >
     <div class="top">
       <div class>
         <img
@@ -176,7 +177,8 @@ export default {
       commodity: [],
       number: 0,
       gameId: "A2705",
-      active1:0
+      active1:0,
+      bol:true
     };
   },
   methods: {
@@ -217,7 +219,6 @@ export default {
         gtid: "100003",
         minPrice: 500
       }).then(res => {
-        console.log(res);
         this.commodity = res.data.body.results
       });
     },
@@ -262,7 +263,7 @@ export default {
       Getdata.get(
         "/conf-service-api/api/postion/list?positionName=APP%E9%A6%96%E9%A1%B5%E7%83%AD%E9%97%A8%E6%8E%A8%E8%8D%90"
       ).then(res => {
-        // console.log(res.data);
+  
         this.recommend = res.data.body;
       }),
       Getdata.get("order-service-api/api/find-back/recover-result").then(
@@ -285,7 +286,12 @@ export default {
       }).then(res => {
         this.commodity = res.data.body.results;
       });
-  }
+  },mounted () {
+    setInterval(() => {
+      this.bol = false
+    }, 500);
+   
+  },
 };
 </script>
 <style src="../assets/css/Home.css" scoped></style>

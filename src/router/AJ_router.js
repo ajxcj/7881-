@@ -42,6 +42,16 @@ export default [
         path: '/estimate',
         component: () => import('../views/estimate.vue')
     },
+    {
+        path: '/banner',
+        component: () => import('../components/banner.vue')
+    },
+    {
+        path: '/pages-list-index',
+        component: () => import('../views/pages-list-index.vue')
+    },
+    
+    
 
 
 
