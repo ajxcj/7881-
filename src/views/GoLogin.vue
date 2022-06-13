@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="header">
-      <div class="san" @click="to"></div>
+      <van-icon name="arrow-left" size="5rem" @click="to" />
     </div>
     <div class="logo">
       <img src="https://h5.7881.com/static/img/logo.6a0f6679.png" alt="" />
@@ -19,6 +19,9 @@
 </template>
 
 <script>
+import Vue from "vue";
+import { Icon } from "vant";
+Vue.use(Icon);
 export default {
   methods: {
     to() {
