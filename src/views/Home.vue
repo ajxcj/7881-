@@ -262,6 +262,12 @@ export default {
       to(index){
          if(index==1){
           this.$router.push('/estimate');
+         }else  if(index==0){
+          this.$router.push('/BuyAccount');
+         }else  if(index==2){
+          this.$router.push('/goldCoins');
+         }else  if(index==3){
+          this.$router.push('/since');
          }
       }
   },
@@ -324,10 +330,7 @@ export default {
         this.commodity = res.data.body.results;
         this.bol = false;
       });
-  },mounted () {
-   
-   
-  },
+  }
 };
 </script>
 <style src="../assets/css/Home.css" scoped></style>
