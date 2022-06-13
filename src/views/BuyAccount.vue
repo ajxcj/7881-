@@ -83,7 +83,7 @@
               color: #ff6600;
               font-weight: bold;
               margin-left: 1rem;
-              width: 12rem;
+              width: 10rem;
               text-align: left;
               overflow: hidden;
               white-space: nowrap;
