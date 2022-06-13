@@ -138,6 +138,7 @@
           </div>
         </div>
         <img :src="item.goodsPicInfoList[0].url" alt="" />
+
         <div class="bot">
           <div class="a">
             <img
@@ -241,7 +242,7 @@ export default {
     //一款游戏
     Getdata.get("/7881accountchannel/api/account/recommend-account").then(
       (res) => {
-        // console.log(res);
+        console.log(res);
         this.oneGame = res.data.body.firstRecommendList;
       }
     );
