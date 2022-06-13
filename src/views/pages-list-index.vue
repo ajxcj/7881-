@@ -1,7 +1,7 @@
 <template>
   <div class="cephalosome">
      <div class="top">
-      <van-icon name="arrow-left" size="4rem" color="#fff" />
+      <van-icon name="arrow-left" size="4rem" color="#fff" @click="to" />
       <span>地下城与勇士</span>
       <div class="shousuo">
         <!-- <van-icon name="search" size="4rem" color="#fff" /> -->
@@ -19,7 +19,11 @@ import cephalosome from "../components/cephalosome.vue";
 export default {
   components: {
     cephalosome
-  }  
+  },methods: {
+    to() {
+      this.$router.push("/home")
+    }
+  }, 
 };
 </script>
 
@@ -27,6 +31,7 @@ export default {
 .cephalosome {
   height: 100%;
   overflow: hidden;
+  
   width: 100%;}
 input::-webkit-input-placeholder {
   color: #fff;

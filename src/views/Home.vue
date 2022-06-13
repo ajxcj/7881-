@@ -322,6 +322,7 @@ export default {
         minPrice: 500,
       }).then((res) => {
         this.commodity = res.data.body.results;
+        this.bol = false;
       });
   },mounted () {
    
