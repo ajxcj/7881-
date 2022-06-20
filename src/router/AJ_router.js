@@ -63,8 +63,8 @@ export default [
         path: '/pages-list-index',
         component: () => import('../views/pages-list-index.vue')
     },
-    
-    
+
+
 
 
 
