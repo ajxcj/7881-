@@ -23,7 +23,11 @@ export default {
     to() {
       this.$router.push("/home")
     }
-  }, 
+  },data() {
+    return {
+      value:null
+    }
+  },
 };
 </script>
 

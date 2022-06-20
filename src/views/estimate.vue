@@ -133,7 +133,6 @@
       <div class="finish-evaluation-list">
         <div class="list-container">
           <roll />
-         
         </div>
       </div>
     </div>
@@ -171,11 +170,10 @@ export default {
     );
     Getdata.get("/goods-service-api/api/untoken/est/case-record").then(res => {
       this.config.data = res.data.body.recordInfo;
-      console.log(this.config.data);
     });
   },
   components: {
-    roll
+    roll,
   },
   methods: {
     to(String) {

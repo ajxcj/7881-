@@ -1,28 +1,29 @@
 <template>
   <div>
     <div class="center">
-      <van-collapse v-model="activeNames" accordion>
+      <van-collapse v-model="activeNames" accordion @change = "change">
         <van-collapse-item :title="gttyname" name="1">
           <van-grid class="jia">
             <van-grid-item
               :text="iten.gtidname"
               v-for="iten in gttype"
               :key="iten.gtid"
-              @click="gttyname=iten.gtidname"
+              @click="handd(iten.gtidname)"
             />
           </van-grid>
         </van-collapse-item>
-        <van-collapse-item title="区服" name="2">
+        <van-collapse-item :title="title2" name="2">
           <van-tree-select
             :items="items"
             :active-id.sync="activeId"
             :main-active-index.sync="activeIndex"
-            @click-item="value"
+            @click-nav="onNavClick"
+            @click-item="ItemClick"
           />
         </van-collapse-item>
-        <van-collapse-item title="区服" name="3">
-          <van-dropdown-menu @closed="closed()">
-            <van-dropdown-item v-model="value1" :options="option1" />
+        <van-collapse-item :title="option1[num].text" name="3">
+          <van-dropdown-menu>
+            <van-dropdown-item v-model="value" :options="option1" @change="closed" />
           </van-dropdown-menu>
         </van-collapse-item>
       </van-collapse>
@@ -49,7 +50,7 @@ export default {
       items: [],
       activeId: 0,
       activeIndex: 0,
-      value1: 0,
+      value: 0,
       option1: [
         { text: "默认排序", value: 0 },
         { text: "比例最好", value: 1 },
@@ -58,7 +59,8 @@ export default {
         { text: "发货最快", value: 4 },
         { text: "最新发布", value: 5 }
       ],
-      value: null
+      title2: "区服",
+      num: 0
     };
   },
   created() {
@@ -86,9 +88,24 @@ export default {
     });
   },
   methods: {
-    closed() {
+    onNavClick(index) {
+      console.log(index);
+    },
+    ItemClick(data) {
+      this.title2 = data.text;
+       this.activeNames = ""
+    },
+    closed(value) {
       this.activeNames = "";
-      console.log(1);
+      this.num = value;
+    },
+    handd(e){
+ 
+      this.gttyname = e
+      this.activeNames = ""
+    },
+    change(e){
+      
     }
   }
 };
