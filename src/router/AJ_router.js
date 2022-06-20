@@ -1,5 +1,5 @@
 export default [
-    {//登录
+    {//去登录
         path: '/gologin',
         component: () => import('../views/GoLogin.vue')
     },
@@ -63,8 +63,8 @@ export default [
         path: '/pages-list-index',
         component: () => import('../views/pages-list-index.vue')
     },
-    
-    
+
+
 
 
 

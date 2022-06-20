@@ -45,7 +45,7 @@
 </template>
 
 <script>
-// import axios from "axios";
+import axios from "axios";
 import { Getdata } from "../api/Getdata.js";
 export default {
   data() {
@@ -109,14 +109,32 @@ export default {
         });
         return;
       }
-      Getdata.post("/basic/api/game-search", {
-        gameType: "",
-        hotFlag: null,
-        px: `${item}`,
-      }).then((res) => {
-        // console.log(res);
-        this.gameList = res.data.body;
-      });
+      // https://gw.7881.com/basic/api/game-search
+
+      // Getdata.post("/basic/api/game-search", {
+      //   gameType: "",
+      //   hotFlag: null,
+      //   px: `${item}`,
+      // }).then((res) => {
+      //   // console.log(res);
+      //   this.gameList = res.data.body;
+      // });
+      axios
+        .post(
+          "http://localhost:3001/home/help-service-api/api/article/query/list-cache",
+          {
+            headers: {
+              "Content-Type": "application / json",
+            },
+            gameType: "",
+            hotFlag: null,
+            px: `${item}`,
+          }
+        )
+        .then((res) => {
+          console.log(res);
+          this.gameList = res.data.body;
+        });
     },
   },
   created() {

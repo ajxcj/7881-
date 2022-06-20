@@ -1,6 +1,6 @@
 <template>
-  <div id="jia" v-loading.fullscreen.lock="bol" 
-  >
+  <div id="jia">
+    <!-- v-loading.fullscreen.lock="bol"  -->
     <div class="top">
       <div class>
         <img
@@ -13,7 +13,7 @@
     </div>
     <section>
       <div class="banner">
-        <dl v-for="(iten,index) in headline" :key="index" @click="to(index)">
+        <dl v-for="(iten, index) in headline" :key="index" @click="to(index)">
           <dt>
             <img :src="iten.content" alt />
           </dt>
@@ -196,8 +196,8 @@ export default {
       commodity: [],
       number: 0,
       gameId: "A2705",
-      active1:0,
-      bol:true
+      active1: 0,
+      bol: true,
     };
   },
   methods: {
@@ -254,22 +254,22 @@ export default {
         pageSize: 20,
         gameId: this.gameId,
         gtid: "100003",
-        minPrice: 500
-      }).then(res => {
-        this.commodity = res.data.body.results
+        minPrice: 500,
+      }).then((res) => {
+        this.commodity = res.data.body.results;
       });
     },
-      to(index){
-         if(index==1){
-          this.$router.push('/estimate');
-         }else  if(index==0){
-          this.$router.push('/BuyAccount');
-         }else  if(index==2){
-          this.$router.push('/goldCoins');
-         }else  if(index==3){
-          this.$router.push('/since');
-         }
+    to(index) {
+      if (index == 1) {
+        this.$router.push("/estimate");
+      } else if (index == 0) {
+        this.$router.push("/BuyAccount");
+      } else if (index == 2) {
+        this.$router.push("/goldCoins");
+      } else if (index == 3) {
+        this.$router.push("/since");
       }
+    },
   },
   created() {
     Getdata.get(
@@ -330,7 +330,7 @@ export default {
         this.commodity = res.data.body.results;
         this.bol = false;
       });
-  }
+  },
 };
 </script>
 <style src="../assets/css/Home.css" scoped></style>
