@@ -26,7 +26,7 @@ export default [
             },
             {//卖
                 path: 'sell',
-                component: () => import('../views/Sell.vue')
+                component: () => import('../views/sell.vue')
             },
             {//我的
                 path: 'my',
