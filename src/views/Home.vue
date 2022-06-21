@@ -1,6 +1,7 @@
 <template>
-  <div id="jia" v-loading.fullscreen.lock="bol" 
+  <div id="jia" 
   >
+  <!-- v-loading.fullscreen.lock="bol"  -->
     <div class="top">
       <div class>
         <img

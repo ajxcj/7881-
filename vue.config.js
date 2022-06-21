@@ -2,6 +2,7 @@ const { defineConfig } = require('@vue/cli-service')
 const px2rem = require('postcss-px2rem')
 module.exports = defineConfig({
   transpileDependencies: true,
+  publicPath: './',
   css: {
     loaderOptions: {
       postcss: {

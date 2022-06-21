@@ -63,6 +63,13 @@ export default [
         path: '/pages-list-index',
         component: () => import('../views/pages-list-index.vue')
     },
+    {
+        path: '/register',
+        component: () => import('../components/register.vue')
+    }, {
+        path: '/Login',
+        component: () => import('../components/Login.vue')
+    },
 
 
 
